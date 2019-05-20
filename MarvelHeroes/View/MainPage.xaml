@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:local="clr-namespace:MarvelHeroes" 
+             x:Class="MarvelHeroes.View.MainPage"
+             Title="HEROES">
+    <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#22262a">
+        <ListView ItemsSource="{Binding Heroes}" ItemAppearing="Handle_ItemAppearing" VerticalOptions="FillAndExpand" 
+                  HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" ItemSelected="Handle_ItemSelected"
+                  RowHeight="180">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                            <Image Source="{Binding Thumbnail.PathFormatted}" HeightRequest="180" WidthRequest="100" HorizontalOptions="Start" Margin="20,0,0,0"/>
+                            <StackLayout>
+                                <Label Text="{Binding Name}" TextColor="White" FontSize="18" Margin="0,20,0,0" />
+                                <Label Text="{Binding Description}" TextColor="White" FontSize="11" LineBreakMode="CharacterWrap"/>
+                            </StackLayout>
+                            
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

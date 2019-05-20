@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="MarvelHeroes.View.DetailsPage"
+             Title="{Binding Name}">
+    <ScrollView BackgroundColor="#22262a">
+        <StackLayout VerticalOptions=" FillAndExpand" HorizontalOptions="FillAndExpand" BackgroundColor="#22262a">
+            <Image Source="{Binding Thumbnail.PathStandardXlarge}" VerticalOptions="Start" HorizontalOptions="Center" HeightRequest="200" WidthRequest="200" />
+            
+            <Label Text="{Binding Description}" TextColor="White" FontSize="16" Margin="20,0,0,0"/> 
+            
+            <Label Text="COMICS" TextColor="White" FontSize="18" Margin="20,0,0,0"/> 
+            <ListView ItemsSource="{Binding Comics.Items}" HasUnevenRows="true" HeightRequest="{Binding Comics.Height}"
+                      HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" ItemSelected="Handle_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="#e62429" FontSize="18" Margin="20,0,0,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="SERIES" TextColor="White" FontSize="18" Margin="20,0,0,0"/> 
+            <ListView ItemsSource="{Binding Series.Items}" HasUnevenRows="true" HeightRequest="{Binding Series.Height}"
+                      HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" ItemSelected="Handle_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="#e62429" FontSize="18" Margin="20,0,0,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="STORIES" TextColor="White" FontSize="18" Margin="20,0,0,0"/> 
+            <ListView ItemsSource="{Binding Stories.Items}" HasUnevenRows="true" HeightRequest="{Binding Stories.Height}"
+                      HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" ItemSelected="Handle_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="#e62429" FontSize="18" Margin="20,0,0,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Label Text="EVENTS" TextColor="White" FontSize="18" Margin="20,0,0,0"/> 
+            <ListView ItemsSource="{Binding Events.Items}" HasUnevenRows="true" HeightRequest="{Binding Events.Height}"
+                      HorizontalOptions="FillAndExpand" BackgroundColor="Transparent" ItemSelected="Handle_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout VerticalOptions="FillAndExpand" HorizontalOptions="FillAndExpand" Orientation="Horizontal">
+                                    <Label Text="{Binding Name}" TextColor="#e62429" FontSize="18" Margin="20,0,0,0" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
+        </StackLayout>    
+    </ScrollView>
+    
+</ContentPage>
